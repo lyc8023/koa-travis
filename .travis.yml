@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+- '8'
+cache:
+  directories:
+  - node_modules
+branches:
+  only:
+  - master
+before_install:
+- openssl aes-256-cbc -K $encrypted_85f34c22de98_key -iv $encrypted_85f34c22de98_iv
+  -in id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+install:
+- npm install
+- npm run prd
+script:
+- echo "Skipping tests"
+addons:
+  ssh_known_hosts: 47.99.102.212
+after_success:
+- ssh root@47.99.102.212 'cd /data/node/koa-travis/ && git pull && npm install && npm run prd'
