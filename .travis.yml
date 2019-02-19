@@ -19,4 +19,4 @@ script:
 addons:
   ssh_known_hosts: 47.99.102.212
 after_success:
-- ssh root@47.99.102.212 'cd /data/node/koa-travis/ && git pull && exoprt PATH=/root/nvm/versions/node/v10.15.1/bin:$PATH && npm install && npm run prd'
+- ssh root@47.99.102.212 'cd /data/node/koa-travis/ && git pull && export PATH=/root/nvm/versions/node/v10.15.1/bin:$PATH && npm install && npm run prd'
