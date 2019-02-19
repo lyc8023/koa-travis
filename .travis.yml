@@ -13,7 +13,7 @@ before_install:
 - chmod 600 ~/.ssh/id_rsa
 install:
 - npm install
-- npm run test
+- npm run prd
 script:
 - echo "Skipping tests"
 addons:
