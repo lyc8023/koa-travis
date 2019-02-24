@@ -9,6 +9,19 @@ const logger = require('koa-logger')
 const index = require('./routes/index')
 const users = require('./routes/users')
 
+// 引入mongoose 
+const mongoose = require('mongoose')
+const dbConfig = require('./database/config')
+
+// 连接数据库的服务
+mongoose.connect(dbConfig.database, {
+  useNewUrlParser: true
+})
+
+mongoose.connection.once('open', () => {
+  console.log('MongoDB Connected successfully!')
+})
+
 // error handler
 onerror(app)
 
