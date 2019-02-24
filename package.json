@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node bin/www",
     "dev": "./node_modules/.bin/nodemon bin/www",
-    "prd": "pm2 restart bin/www || pm2 start bin/www",
+    "prd": "pm2 restart koa-travis || pm2 start --name koa-travis bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

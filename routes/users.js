@@ -3,7 +3,7 @@ const router = require('koa-router')()
 // 引入mongoose模型
 const TestData = require('../database/models/test')
 
-router.prefix('/koa-api/users')
+router.prefix('/users')
 
 router.get('/', async (ctx, next) => {
   ctx.body = 'this is users page'
