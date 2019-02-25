@@ -6,6 +6,11 @@ const TestData = require('../database/models/test')
 router.prefix('/users')
 
 router.get('/', async (ctx, next) => {
+  const newuser = new TestData({
+    userName: 'll',
+    age: 11
+  })
+  console.log(newuser)
   ctx.body = 'this is users page'
 })
 
