@@ -15,7 +15,6 @@ router.get('/bar', function (ctx, next) {
 
 router.get('/info', async (ctx) => {
   let result = await TestData.find()
-
   ctx.body = {
     code: 0,
     result: result
